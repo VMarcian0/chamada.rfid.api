@@ -1,13 +1,14 @@
-import { STATUS_KEYS } from ".."
+import { CourseRefType, MAJOR_KEYS, STATUS_KEYS } from ".."
 
 export type UserType = {
     _id?: string,
     ra: string,
     cpf?: string
-    course: string,
+    courses?: CourseRefType[],
     classrooms?: ClassroomRefType[],
     createdAt?:string,
-    updatedAt?:string
+    updatedAt?:string,
+    major: MAJOR_KEYS
 }
 
 export type ClassroomRefType = {

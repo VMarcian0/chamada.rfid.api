@@ -4,7 +4,7 @@
 // for more of what you can do here.
 import { Application } from '../declarations';
 import { Model, Mongoose, Schema } from 'mongoose';
-import { ROLES_KEYS, STATUS_KEYS } from '../types';
+import { MAJOR_KEYS, ROLES_KEYS, STATUS_KEYS } from '../types';
 
 export default function (app: Application): Model<any> {
   const modelName = 'users';
@@ -14,7 +14,18 @@ export default function (app: Application): Model<any> {
     password: { type: String },
     name: { type: String },
     cpf: { type: String, index:{unique:true, sparse:true}, required:false},
-    course: { type: String, required:true, ref:'courses'},
+    courses:[
+      {
+        type: new Schema(
+          {
+            course: { type: String, required:true, ref:'courses'},
+            status: {type: String, reuqired:true, default:STATUS_KEYS.ACTIVE, enum:STATUS_KEYS}
+          }
+        ),
+        required:false,
+        timestamps:true
+      }
+    ],
     classrooms:[
       {
         type: new Schema(

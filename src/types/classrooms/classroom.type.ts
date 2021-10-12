@@ -11,6 +11,7 @@ export type ClassroomType = {
 }
 
 export type CourseRefType = {
+    _id?: string,
     course: string,
     status: STATUS_KEYS,
     createdAt?: string,
