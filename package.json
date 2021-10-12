@@ -24,14 +24,12 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "test": "npm run lint && npm run compile && npm run mocha",
-    "lint": "eslint src/. test/. --config .eslintrc.json --ext .ts --fix",
+    "test": "npm run compile && npm run mocha",
     "dev": "ts-node-dev --no-notify src/",
-    "start": "npm run compile && node lib/",
-    "mocha": "ts-mocha \"test/**/*.ts\" --recursive --exit",
+    "start": "node lib/",
+    "mocha": "ts-mocha \"test/*/.ts\" --recursive --exit",
     "compile": "shx rm -rf lib/ && tsc",
-    "build": "tsc",
-    "postinstall": "npm run build"
+    "build": "npm run compile"
   },
   "standard": {
     "env": [
