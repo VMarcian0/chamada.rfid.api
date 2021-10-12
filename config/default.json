@@ -24,9 +24,9 @@
       "expiresIn": "1d"
     },
     "local": {
-      "usernameField": "email",
+      "usernameField": "ra",
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://localhost:27017/chamada_rfid_api"
+  "mongodb": "mongodb+srv://admin:admin@cluster0.kwamd.mongodb.net/chamadaRFID?retryWrites=true&w=majority"
 }
