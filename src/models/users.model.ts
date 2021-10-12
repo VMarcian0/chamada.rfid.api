@@ -39,7 +39,8 @@ export default function (app: Application): Model<any> {
       }
     ],
     role: {type: String, required:true, enum:ROLES_KEYS},
-    major: {type: String, required:true, enum:MAJOR_KEYS}
+    major: {type: String, required:true, enum:MAJOR_KEYS},
+    rfid: {type: String, required:false, index:{unique:true, sparse:true}, uppercase:true}
   }, {
     timestamps: true
   });
