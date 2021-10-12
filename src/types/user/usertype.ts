@@ -5,12 +5,12 @@ export type UserType = {
     ra: string,
     cpf?: string
     course: string,
-    classrooms?: ClassroomType[],
+    classrooms?: ClassroomRefType[],
     createdAt?:string,
     updatedAt?:string
 }
 
-export type ClassroomType = {
+export type ClassroomRefType = {
     _id?:string,
     room: string,
     status: STATUS_KEYS,
