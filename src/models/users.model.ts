@@ -4,7 +4,7 @@
 // for more of what you can do here.
 import { Application } from '../declarations';
 import { Model, Mongoose, Schema } from 'mongoose';
-import { STATUS_KEYS } from '../types';
+import { ROLES_KEYS, STATUS_KEYS } from '../types';
 
 export default function (app: Application): Model<any> {
   const modelName = 'users';
@@ -26,7 +26,9 @@ export default function (app: Application): Model<any> {
         required: false,
         timestamps:true
       }
-    ]
+    ],
+    role: {type: String, required:true, enum:ROLES_KEYS},
+    major: {type: String, required:true, enum:MAJOR_KEYS}
   }, {
     timestamps: true
   });
