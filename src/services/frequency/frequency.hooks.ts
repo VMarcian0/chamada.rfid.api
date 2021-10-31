@@ -1,4 +1,5 @@
 import * as authentication from '@feathersjs/authentication';
+import { frequencyCreatePayloadNormalize } from '../../hooks/frequency';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const { authenticate } = authentication.hooks;
@@ -8,7 +9,7 @@ export default {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [],
+    create: [frequencyCreatePayloadNormalize],
     update: [],
     patch: [],
     remove: []
