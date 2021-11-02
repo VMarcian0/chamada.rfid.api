@@ -9,7 +9,7 @@ export default {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [frequencyCreatePayloadNormalize],
+    create: [ frequencyCreatePayloadNormalize ],
     update: [],
     patch: [],
     remove: []
