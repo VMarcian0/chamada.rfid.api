@@ -3,6 +3,7 @@ import users from './users/users.service';
 import courses from './courses/courses.service';
 import classrooms from './classrooms/classrooms.service';
 import frequency from './frequency/frequency.service';
+import embedded from './embedded/embedded.service';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 export default function (app: Application): void {
@@ -10,4 +11,5 @@ export default function (app: Application): void {
   app.configure(courses);
   app.configure(classrooms);
   app.configure(frequency);
+  app.configure(embedded);
 }
