@@ -3,4 +3,5 @@ export enum MAJOR_KEYS{
     CIVIL= "CIVIL",
     QUIMICA = "QUÍMICA",
     SYSADMIN = "SYSADMIN",
+    PROFESSOR = "PROFESSOR",
 }
