@@ -26,7 +26,6 @@ const methodSwitch = async (context:HookContext) => {
       classroom
     }
     let {data} = await axios.post(url+'init_attendance', JSON.stringify(payload))
-    console.log(data);
     if (data == 'Chamada Iniciada'){
       context.result = "Success!";
       return context;
@@ -39,7 +38,19 @@ const methodSwitch = async (context:HookContext) => {
    * Ends the working of the module
    */
   if (context.data.method == "<CLOSE>"){
-    //if (data == 'Chamada finalizada')
+    const classroom = context.data.classroom as string;
+    const payload = {
+      token,
+      classroom
+    }
+    let {data} = await axios.post(url+'close_attendance', JSON.stringify(payload))
+    if (data == 'Chamada finalizada'){
+      context.result = "Success!";
+      return context;
+    }
+    else {
+      throw new Unprocessable();
+    }
   }
   /**
    * Get the module current status
