@@ -6,5 +6,6 @@ export type FrequencyType = {
     updatedAt?:string,
     user:string,
     status: STATUS_KEYS,
-    date:string
+    date:string,
+    classroom: string,
 }

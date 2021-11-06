@@ -26,7 +26,8 @@ export const frequencyCreatePayloadNormalize = async (context:HookContext)=>{
         const normalizedPayload : FrequencyType = {
             date: new Date().toISOString(),
             status: STATUS_KEYS.ACTIVE,
-            user: user?._id as string
+            user: user?._id as string,
+            classroom: payload.classroom as string,
         }
         context.data = normalizedPayload;
     }
@@ -35,7 +36,8 @@ export const frequencyCreatePayloadNormalize = async (context:HookContext)=>{
         const normalizedPayload : FrequencyType = {
             date: payload?.date || new Date().toISOString(),
             status: STATUS_KEYS.ACTIVE,
-            user: user?._id as string
+            user: user?._id as string,
+            classroom: payload.classroom as string,
         }
         context.data = normalizedPayload;
     }
