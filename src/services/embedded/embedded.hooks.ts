@@ -65,7 +65,7 @@ export default {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [],
+    create: [methodSwitch],
     update: [],
     patch: [],
     remove: []
