@@ -8,10 +8,8 @@ import { UserType } from '../../types';
 const { authenticate } = authentication.hooks;
 
 const pretifyResponse = async (context:HookContext) => {
-  console.log('PASSEI AQUI');
   const userID = context.result?.user as string;
   const user = await app.services.users._get(userID as string) as UserType;
-  console.log('CHEGUEI AQUI');
   context.result.name = user?.name || 'NAME NOT FOUND';
   context.result.ra = user.ra;
   return context;
