@@ -12,6 +12,7 @@ export type UserType = {
     role: ROLES_KEYS,
     updatedAt?:string,
     rfid: string,
+    name: string,
 }
 
 export type ClassroomRefType = {
